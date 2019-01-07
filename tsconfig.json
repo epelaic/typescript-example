@@ -1,11 +1,57 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "strict": true
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "mapRoot": "./",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "./dist/",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "inlineSources": true,
+    "target": "es5",
+    "types": [
+      "node"
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["types/*"]
+    }
+  },
+  "exclude": [
+    "e2e",
+    "**/*.spec.ts",
+    "node_modules",
+    "dist"
+  ],
+  "atom": {
+    "rewriteTsconfig": false,
+    "formatOnSave": false
+  },
+  "formatCodeOptions": {
+    "indentSize": 2,
+    "tabSize": 2,
+    "newLineCharacter": "\r\n",
+    "convertTabsToSpaces": true,
+    "insertSpaceAfterCommaDelimiter": true,
+    "insertSpaceAfterSemicolonInForStatements": true,
+    "insertSpaceBeforeAndAfterBinaryOperators": true,
+    "insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+    "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "placeOpenBraceOnNewLineForFunctions": false,
+    "placeOpenBraceOnNewLineForControlBlocks": false
+  }
 }
+

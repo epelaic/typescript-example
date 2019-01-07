@@ -8,20 +8,23 @@
   },
   "main": "dist/example.js",
   "dependencies": {
-    "fullcalendar": "^3.9.0",
-    "jquery": "^3.3.1"
+    "fullcalendar": "4.0.0-alpha.3"
   },
   "devDependencies": {
-    "@types/jquery": "^3.3.0",
-    "awesome-typescript-loader": "^3.4.1",
-    "source-map-loader": "^0.2.3",
-    "typescript": "^2.6.2",
-    "webpack": "^3.10.0"
+    "@types/jquery": "3.3.29",
+    "@types/node": "9.4.6",
+    "source-map-loader": "0.2.3",
+    "ts-loader": "4.3.0",
+    "ts-node": "6.0.5",
+    "typescript": "2.9.2",
+    "rimraf": "2.6.2",
+    "webpack": "4.28.3",
+    "webpack-cli": "3.0.8"
   },
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "clean": "rm -rf ./dist"
+    "clean": "rimraf ./dist"
   },
   "author": "Adam Shaw <arshaw@arshaw.com> (http://arshaw.com/)",
   "license": "ISC"

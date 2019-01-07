@@ -1,19 +1,29 @@
-import * as $ from 'jquery';
-import 'fullcalendar';
 
-$(function() {
-  let containerEl: JQuery = $('#calendar');
+import { Calendar } from 'fullcalendar';
 
-  containerEl.fullCalendar({
+document.addEventListener('DOMContentLoaded', function() { // page is now ready...
+
+  var calendarEl:HTMLElement = <HTMLElement> document.getElementById('calendar'); // grab element reference
+
+  var calendar = new Calendar(calendarEl, {
     header: {
       left: 'prev,next today',
       center: 'title',
       right: 'month,agendaWeek,agendaDay,listWeek'
     },
+    defaultView: 'agendaWeek',
     defaultDate: '2018-01-12',
     navLinks: true, // can click day/week names to navigate views
-    editable: true,
+    editable: false,
     eventLimit: true, // allow "more" link when too many events
+    eventRender: function(info:any) {
+      console.log('title : ' + info.event.title);
+      console.log('el : ' + info.el);
+      console.log('view : ' + info.view);
+      console.log('isStart : ' + info.isStart);
+      console.log('isEnd : ' + info.isEnd);
+      console.log('isMirror : ' + info.isMirror);
+    },
     events: [
       {
         title: 'All Day Event',
@@ -69,6 +79,11 @@ $(function() {
         url: 'http://google.com/',
         start: '2018-01-28'
       }
-    ]
-  })
+    ],
+    plugins: []
+  });
+
+  calendar.render();
+
 });
+
